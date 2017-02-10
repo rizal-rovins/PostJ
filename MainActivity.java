@@ -30,10 +30,10 @@ try
     user.put("name", "ajul");
      AsyncHttpClient client = new AsyncHttpClient();
 
-    StringEntity entity = new StringEntity(jsonParams.toString());
+    StringEntity entity = new StringEntity(user.toString());
     entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
 
-    client.post(context, restApiUrl, entity, "application/json", responseHandler);
+    client.post(getApplicationContext(), url, entity, "application/json", responseHandler);
 
 }
 catch (Exception e)
